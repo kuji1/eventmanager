@@ -72,6 +72,23 @@ if ($id != null) {
         echo "<hr>";
     }
 }
+echo <<<EOL
+<form action="addEvent.php" method="post">
+<div>
+    <div>
+        <label for="event-name">Event name</label>
+        <input type="text" class="form-control" name="event-name">
+    </div>
+    <div>
+            <label for="event-date">Event date</label>
+            <input type="text" class="form-control" name="event-date">
+        </div>
+    <div>
+        <button type="submit">Send</button>
+    </div>
+</div>
+</form>
+EOL;
 echo "  </body>";
 echo "</html>";
 
