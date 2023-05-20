@@ -60,7 +60,16 @@ if ($id != null) {
     echo "	<h1>$name</h1>";
     echo "	<p>Event date - $date</p>";
 } else {
+    $events = json_decode(getEvents());
 
+    foreach ($events as $event) {
+        $name = $event->{"name"};
+        $date = $event->{"date"};
+
+        echo "<h1>$name</h1>";
+        echo "<p>Event date - $date</p>";
+        echo "<hr>";
+    }
 }
 echo "  </body>";
 echo "</html>";
