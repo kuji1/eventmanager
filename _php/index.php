@@ -63,10 +63,11 @@ if ($id != null) {
     $events = json_decode(getEvents());
 
     foreach ($events as $event) {
+        $id = $event->{"id"};
         $name = $event->{"name"};
         $date = $event->{"date"};
 
-        echo "<h1>$name</h1>";
+        echo "<h1><a href=\"/$id\">$name</a></h1>";
         echo "<p>Event date - $date</p>";
         echo "<hr>";
     }
