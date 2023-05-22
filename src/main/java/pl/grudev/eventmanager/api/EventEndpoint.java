@@ -1,9 +1,6 @@
 package pl.grudev.eventmanager.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.grudev.eventmanager.domain.Event;
 
 import java.util.List;
@@ -17,4 +14,7 @@ public interface EventEndpoint {
 
     @GetMapping("/events")
     List<Event> getEvents();
+
+    @PostMapping("/events")
+    void addEvent(@RequestParam String name, @RequestParam String date);
 }

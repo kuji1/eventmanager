@@ -20,8 +20,14 @@ public class EventService implements EventEndpoint {
         return eventRepository.findById(id).orElse(null);
     }
 
-    @Override
     public List<Event> getEvents() {
         return eventRepository.findAll();
+    }
+
+    public void addEvent(String name, String date) {
+        Event event = new Event();
+        event.setName(name);
+        event.setDate(date);
+        eventRepository.insert(event);
     }
 }

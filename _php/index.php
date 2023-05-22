@@ -69,6 +69,10 @@ if ($id != null) {
 
         echo "<h1><a href=\"/$id\">$name</a></h1>";
         echo "<p>Event date - $date</p>";
+        echo "<form action=\"deleteEvent.php\" method=\"post\">";
+        echo "<div><input type=\"hidden\" class=\"form-control\" name=\"event-id\" value=\"$id\"></div>";
+        echo "<div><button type=\"submit\">Delete</button></div>";
+        echo "</form>";
         echo "<hr>";
     }
 }
